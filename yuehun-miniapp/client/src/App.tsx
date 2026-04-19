@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import { useEffect } from "react";
 import { Route, Router as WouterRouter, Switch } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -28,6 +29,14 @@ function AppRouter() {
 }
 
 function App() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#/#")) {
+      const normalized = `#${hash.slice(3)}`;
+      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${normalized}`);
+    }
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">

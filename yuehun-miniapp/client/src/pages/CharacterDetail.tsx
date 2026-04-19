@@ -2,7 +2,7 @@
  * 「鎏金教坊」盛唐宫廷华彩风 — 角色详情页
  * 展示角色立绘、背景故事、武器、服饰纹样等
  */
-import { useParams, Link } from "wouter";
+import { useLocation, useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Swords, Shirt, Palette, BookOpen, Sparkles } from "lucide-react";
 import { getCharacterById, characters } from "@/lib/characters";
@@ -19,6 +19,7 @@ const fadeIn = {
 
 export default function CharacterDetail() {
   const { id } = useParams<{ id: string }>();
+  const [, setLocation] = useLocation();
   const char = getCharacterById(id || "");
 
   if (!char) {
@@ -43,10 +44,14 @@ export default function CharacterDetail() {
       <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-gold/10"
         style={{ background: "rgba(30, 18, 45, 0.9)" }}>
         <div className="flex items-center h-14 px-4 max-w-lg mx-auto">
-          <Link href="/ip-gallery" className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
+          <button
+            type="button"
+            onClick={() => setLocation("/ip-gallery")}
+            className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors"
+          >
             <ArrowLeft className="w-4 h-4" />
             <span className="text-xs tracking-wider font-sans">返回</span>
-          </Link>
+          </button>
           <span className="flex-1 text-center font-serif-cn text-sm tracking-widest text-foreground">
             {char.name}
           </span>
