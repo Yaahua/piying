@@ -25,6 +25,8 @@ export interface Character {
   colorAccent: string;
 }
 
+const CHARACTER_IMAGE_BASE = `${import.meta.env.BASE_URL}characters/`;
+
 export const characters: Character[] = [
   {
     id: "xie-yunzhi",
@@ -33,7 +35,7 @@ export const characters: Character[] = [
     instrumentIcon: "🎵",
     role: "谋士 / 太学博士",
     gender: "男",
-    image: "/manus-storage/xie-yunzhi-nobg_b83720b4.png",
+    image: `${CHARACTER_IMAGE_BASE}xie-yunzhi-nobg.png`,
     poem: "泠泠七弦上，静听松风寒。",
     poemAuthor: "刘长卿《听弹琴》",
     background: "化灵之初师从道士吴筠，后入太学任乐博士，编纂《开元雅乐谱》。他以清冷高傲的姿态行走于朝堂与江湖之间，实则内心深藏对音律之道的执着守护。",
@@ -54,7 +56,7 @@ export const characters: Character[] = [
     instrumentIcon: "🎶",
     role: "将门女将",
     gender: "女",
-    image: "/manus-storage/xue-zhenyue-nobg_daac1a4d.png",
+    image: `${CHARACTER_IMAGE_BASE}xue-zhenyue-nobg.png`,
     poem: "大弦嘈嘈如急雨，小弦切切如私语。",
     poemAuthor: "白居易《琵琶行》",
     background: "名将薛丁山养女兼徒弟，薛府被满门抄斩后流落教坊司。在歌舞升平的表象下，她从未放弃为薛家翻案的执念。",
@@ -75,7 +77,7 @@ export const characters: Character[] = [
     instrumentIcon: "🎼",
     role: "治愈者",
     gender: "男",
-    image: "/manus-storage/ruan-ling-nobg_b6329d48.png",
+    image: `${CHARACTER_IMAGE_BASE}ruan-ling-nobg.png`,
     poem: "掩抑复凄清，非琴不是筝。",
     poemAuthor: "白居易《和令狐仆射小饮听阮咸》",
     background: "蜀中匠人江晚枫耗十年心血铸造阮咸琴，遭官府抄家之际，坐于火场中以血涂琴，琴魂因此化灵。阮泠继承了匠人的温柔与坚韧。",
@@ -96,7 +98,7 @@ export const characters: Character[] = [
     instrumentIcon: "🎻",
     role: "草原少年",
     gender: "男",
-    image: "/manus-storage/maile-nobg_5a310b1e.png",
+    image: `${CHARACTER_IMAGE_BASE}maile-nobg.png`,
     poem: "胡姬貌如花，当垆笑春风。",
     poemAuthor: "李白《前有一樽酒行》",
     background: "全名安呼麦格日勒，草原战场上吸收马嘶鸣与胡笳声化形，借丝绸之路入长安。他带着草原的自由与野性，在宫廷礼教中显得格格不入。",
@@ -117,7 +119,7 @@ export const characters: Character[] = [
     instrumentIcon: "🌑",
     role: "侠盗",
     gender: "男",
-    image: "/manus-storage/su-mingyou-nobg_f5a5e21a.png",
+    image: `${CHARACTER_IMAGE_BASE}su-mingyou-nobg.png`,
     poem: "千山鸟飞绝，万径人踪灭。",
     poemAuthor: "柳宗元《江雪》",
     background: "与篪一同化灵于长安城西贫民窟，目睹底层百姓的苦难后，以侠盗身份劫富济贫。白日隐于市井，夜晚出没于权贵府邸。",
@@ -138,7 +140,7 @@ export const characters: Character[] = [
     instrumentIcon: "🎵",
     role: "情报掌控者",
     gender: "女",
-    image: "/manus-storage/liu-yaocong-nobg_29af3a59.png",
+    image: `${CHARACTER_IMAGE_BASE}liu-yaocong-nobg.png`,
     poem: "谁家玉笛暗飞声，散入春风满洛城。",
     poemAuthor: "李白《春夜洛城闻笛》",
     background: "江南富商养女，精通赌术，管理赌坊。凭借赌坊的信息网络，她掌握着长安城中最隐秘的情报，是主角团的'千里眼'。",
