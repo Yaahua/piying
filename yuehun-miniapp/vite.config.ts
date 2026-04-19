@@ -207,7 +207,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 const isGithubPages = process.env.GITHUB_ACTIONS === "true";
 
 export default defineConfig({
-  base: isGithubPages ? "/Jingsai/" : "/",
+  base: isGithubPages ? "/piying/" : "/",
   plugins,
   resolve: {
     alias: {
