@@ -43,7 +43,7 @@ export default function CharacterDetail() {
       <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-gold/10"
         style={{ background: "rgba(30, 18, 45, 0.9)" }}>
         <div className="flex items-center h-14 px-4 max-w-lg mx-auto">
-          <Link href="/#ip-gallery" className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
+          <Link href="/ip-gallery" className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-xs tracking-wider font-sans">返回</span>
           </Link>
