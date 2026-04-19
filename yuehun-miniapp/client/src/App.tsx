@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
-import { Route, Router as WouterRouter, Switch } from "wouter";
+import { Route, Router as WouterRouter, Switch, useLocation } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -28,6 +28,18 @@ function AppRouter() {
   );
 }
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   useEffect(() => {
     const hash = window.location.hash;
@@ -43,6 +55,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <WouterRouter hook={useHashLocation}>
+            <ScrollToTop />
             <AppRouter />
           </WouterRouter>
         </TooltipProvider>
